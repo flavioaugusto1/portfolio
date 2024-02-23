@@ -1,7 +1,14 @@
+import { ChangeEvent, FormEvent, useState } from "react";
+import { toast } from "sonner";
 import { Project } from "../components/Project";
 import { Stack } from "../components/Stack";
+import { api } from "../services/api";
 
 export function Home() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const projects = [
     {
       id: 1,
@@ -37,12 +44,40 @@ export function Home() {
     },
   ];
 
+  function handleFirstName(event: ChangeEvent<HTMLInputElement>) {
+    setName(event.target.value);
+  }
+
+  function handleEmail(event: ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value);
+  }
+
+  function handleMessage(event: ChangeEvent<HTMLTextAreaElement>) {
+    setMessage(event.target.value);
+  }
+
+  async function handleSubmitEmailContact(event: FormEvent) {
+    event.preventDefault();
+    try {
+      const sendEmail = await api.post("/xkndbwdz", {
+        name,
+        email,
+        message,
+      });
+
+      toast.success("E-mail enviado com sucesso!");
+    } catch (error) {
+      toast.error("Não foi possível enviar seu e-mail.");
+    }
+  }
+
   return (
     <div className="max-w-screen-md m-auto pt-24 pb-24 space-y-16 px-4">
       <div className="flex gap-1 items-center">
         <img
           src="https://github.com/flavioaugusto1.png"
-          className="h-14 w-14 rounded-full  "
+          className="h-14 w-14 rounded-full"
+          alt="Foto mostrando mais o perfil do rosto de um homem que está utilzando camisa preta, uma barba media e fazendo uma cara um pouco mais seria "
         />
         <div className="flex flex-col">
           <span className="text-lg font-semibold text-zinc-800">
@@ -55,10 +90,12 @@ export function Home() {
       <div className="flex flex-col space-y-2">
         <span className="font-semibold text-zinc-800 text-xl">Sobre mim</span>
         <span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ea
-          enim commodi repellat suscipit dicta consequuntur, autem perspiciatis
-          veniam assumenda voluptatem. Aut dolores quaerat molestiae dolorem
-          accusantium. Quis, cupiditate dolorum?
+          Olá, meu nome é Flávio Augusto, tenho 26 anos e atualmente resido em
+          Santa Catarina. Sou um profissional dedicado e apaixonado por
+          tecnologia, desempenhando atualmente a função de Técnico de Suporte
+          Pleno. Tenho como objetivo direcionar minha carreira para a área de
+          Desenvolvimento Front-End, atraído pela sua dinâmica, inovação e
+          desafios constantes.
         </span>
       </div>
 
@@ -120,9 +157,8 @@ export function Home() {
         </ul>
 
         <form
+          onSubmit={handleSubmitEmailContact}
           className="flex flex-1 gap-4 flex-col"
-          action="mailto:f.augustosdn@gmail.com"
-          method="post"
         >
           <div className="grid grid-cols-2 gap-2">
             <label htmlFor="firstName" className="sr-only">
@@ -133,13 +169,15 @@ export function Home() {
               className="py-2 px-2 bg-gray-300 rounded-md"
               type="text"
               placeholder="Nome"
+              onChange={handleFirstName}
             />
-            <label htmlFor="surName" className="sr-only">
-              Nome
+            <label htmlFor="email" className="sr-only">
+              E-mail
             </label>
             <input
-              id="surName"
+              id="email"
               className="py-2 px-2 bg-gray-300 rounded-md"
+              onChange={handleEmail}
               type="email"
               placeholder="E-mail"
             />
@@ -150,6 +188,7 @@ export function Home() {
           <textarea
             className="py-2 px-2 bg-gray-300 rounded-md resize-none h-36"
             placeholder="Escreva uma mensagem"
+            onChange={handleMessage}
           />
           <button
             className="py-2 px-2 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"

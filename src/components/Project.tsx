@@ -12,17 +12,24 @@ export function Project({ title, description, github, deploy }: ProjectProps) {
     <div className="flex flex-col">
       <div className="flex justify-between">
         <span className="text-zinc-700 text-lg font-semibold">{title}</span>
-        <div className="space-x-2">
-          <button className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all">
-            <a href={github} target="_blank">
-              <GithubLogo className="h-5 w-5" />
-            </a>
-          </button>
-          <button className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all">
-            <a href={deploy} target="_blank">
-              <Browser className="h-5 w-5" />
-            </a>
-          </button>
+        <div className="flex gap-2">
+          <a
+            className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all"
+            href={github}
+            target="_blank"
+            aria-label="Direciona para o github"
+          >
+            <GithubLogo className="h-5 w-5" />
+          </a>
+
+          <a
+            className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all"
+            href={deploy}
+            target="_blank"
+            aria-label="Direciona para o projeto em produção"
+          >
+            <Browser className="h-5 w-5" />
+          </a>
         </div>
       </div>
       <span className="text-zinc-600">{description}</span>
