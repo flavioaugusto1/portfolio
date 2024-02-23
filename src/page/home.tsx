@@ -58,6 +58,14 @@ export function Home() {
 
   async function handleSubmitEmailContact(event: FormEvent) {
     event.preventDefault();
+
+    if (!name || !email || !message) {
+      toast.error(
+        "Você esqueceu um dos campos em branco, por gentileza preencha para enviar sua mensagem.",
+      );
+      return;
+    }
+
     try {
       const sendEmail = await api.post("/xkndbwdz", {
         name,
@@ -123,7 +131,9 @@ export function Home() {
         </span>
         <span className="text-zinc-600">
           Caso tenha gostado do que viu nos meus trabalhos, fique a vontade para
-          enviar um e-mail, ficarei super feliz em responder a sua mensagem
+          enviar um e-mail, seja ele como um feedback para meus projetos ou caso
+          tenha tido interesse no meu trabalho. Ficarei super feliz em receber
+          sua mensagem.
         </span>
 
         <ul className="flex items-center gap-4 text-gray-500 list-none underline font-medium">
