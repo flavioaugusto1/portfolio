@@ -81,7 +81,7 @@ export function Home() {
   }
 
   return (
-    <div className="max-w-screen-md m-auto pt-20 pb-24 space-y-16 px-4 animate-appears">
+    <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears">
       <Menu />
 
       <div className="flex gap-1 items-center">
@@ -110,7 +110,7 @@ export function Home() {
         </span>
       </div>
 
-      <div className="space-y-8">
+      <div className="flex flex-col gap-8">
         <span className="text-zinc-800 text-xl font-semibold">Projetos</span>
         {projects.map((project) => (
           <Project
@@ -121,6 +121,14 @@ export function Home() {
             deploy={project.deploy}
           />
         ))}
+
+        <a
+          className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
+          href="https://github.com/flavioaugusto1?tab=repositories"
+          target="_blank"
+        >
+          Mais projetos
+        </a>
       </div>
 
       <div className="space-y-6">
