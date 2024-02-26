@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { Project } from "../components/Project";
 import { Stack } from "../components/Stack";
 import { api } from "../services/api";
+import { Menu } from "../components/Menu";
 
 export function Home() {
   const [name, setName] = useState("");
@@ -80,7 +81,9 @@ export function Home() {
   }
 
   return (
-    <div className="max-w-screen-md m-auto pt-24 pb-24 space-y-16 px-4 animate-appears">
+    <div className="max-w-screen-md m-auto pt-20 pb-24 space-y-16 px-4 animate-appears">
+      <Menu />
+
       <div className="flex gap-1 items-center">
         <img
           src="https://github.com/flavioaugusto1.png"
