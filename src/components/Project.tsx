@@ -1,4 +1,4 @@
-import { Browser, GithubLogo } from "@phosphor-icons/react";
+import { Github, ExternalLink } from "lucide-react";
 
 interface ProjectProps {
   title: string;
@@ -19,7 +19,7 @@ export function Project({ title, description, github, deploy }: ProjectProps) {
             target="_blank"
             aria-label="Direciona para o github"
           >
-            <GithubLogo className="h-5 w-5" />
+            <Github className="h-5 w-5" />
           </a>
 
           <a
@@ -28,7 +28,7 @@ export function Project({ title, description, github, deploy }: ProjectProps) {
             target="_blank"
             aria-label="Direciona para o projeto em produção"
           >
-            <Browser className="h-5 w-5" />
+            <ExternalLink className="h-5 w-5" />
           </a>
         </div>
       </div>
