@@ -76,7 +76,7 @@ export function Home() {
     }
 
     try {
-      const sendEmail = await api.post("/xkndbwdz}", {
+      const sendEmail = await api.post("/xkndbwdz", {
         name,
         email,
         message,
