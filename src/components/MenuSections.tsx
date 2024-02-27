@@ -1,58 +1,10 @@
-import { useState } from "react";
-import {
-  Linkedin,
-  Github,
-  Instagram,
-  Laptop,
-  Shell,
-  Clapperboard,
-} from "lucide-react";
 import { toast } from "sonner";
 
-export function MenuSections() {
-  const [links, setLinks] = useState([
-    {
-      section: "social",
-      medias: [
-        {
-          name: "Linkedin",
-          link: "https://www.linkedin.com/in/flavio-augusto1/",
-          icon: <Linkedin className="w-4 h-4" />,
-        },
-        {
-          name: "Github",
-          link: "https://github.com/flavioaugusto1",
-          icon: <Github className="w-4 h-4" />,
-        },
-        {
-          name: "Instagram",
-          link: "https://www.instagram.com/flavio.sdn/",
-          icon: <Instagram className="w-4 h-4" />,
-        },
-      ],
-    },
-    {
-      section: "others",
-      medias: [
-        {
-          name: "Setup",
-          link: "#",
-          icon: <Laptop className="w-4 h-4" />,
-        },
-        {
-          name: "Animes",
-          link: "#",
-          icon: <Shell className="w-4 h-4" />,
-        },
-        {
-          name: "Filmes",
-          link: "#",
-          icon: <Clapperboard className="w-4 h-4" />,
-        },
-      ],
-    },
-  ]);
+interface MenuSectionsProps {
+  data: object[];
+}
 
+export function MenuSections({ data }: MenuSectionsProps) {
   function unavailableOption() {
     toast.warning("Essa opção ainda não está disponível!");
     return;
@@ -60,11 +12,12 @@ export function MenuSections() {
 
   return (
     <div className="space-y-3 p-3">
+      {/* Sessão de mídias */}
       <div>
         <span className="text-sm font-semibold text-zinc-500">
           Mídias Sociais
         </span>
-        {links.map(
+        {data.map(
           (link) =>
             link.section === "social" && (
               <div key={link.section} className="text-zinc-700 font-medium">
@@ -84,9 +37,10 @@ export function MenuSections() {
         )}
       </div>
 
+      {/* Sessão de outros */}
       <div>
         <span className="text-sm font-semibold text-zinc-500">Outros</span>
-        {links.map(
+        {data.map(
           (link) =>
             link.section === "others" && (
               <div key={link.section} className="text-zinc-700 font-medium">
@@ -94,13 +48,10 @@ export function MenuSections() {
                   <div
                     key={media.name}
                     className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400"
+                    onClick={unavailableOption}
                   >
                     <div>{media.icon}</div>
-                    <a
-                      onClick={unavailableOption}
-                      className="w-full"
-                      href={media.link}
-                    >
+                    <a className="w-full" href={media.link}>
                       {media.name}
                     </a>
                   </div>

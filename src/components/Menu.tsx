@@ -1,10 +1,94 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Command, X, Search } from "lucide-react";
+import {
+  Command,
+  X,
+  Search,
+  Linkedin,
+  Github,
+  Instagram,
+  Laptop,
+  Shell,
+  Clapperboard,
+  Gamepad2,
+  SearchX,
+} from "lucide-react";
+
 import { MenuSections } from "./MenuSections";
+import { ChangeEvent, useState } from "react";
 
 export function Menu() {
+  const [search, setSearch] = useState("");
+
+  const itemSearch = [
+    {
+      section: "social",
+      medias: [
+        {
+          name: "Linkedin",
+          link: "https://www.linkedin.com/in/flavio-augusto1/",
+          icon: <Linkedin className="w-4 h-4" />,
+        },
+        {
+          name: "Github",
+          link: "https://github.com/flavioaugusto1",
+          icon: <Github className="w-4 h-4" />,
+        },
+        {
+          name: "Instagram",
+          link: "https://www.instagram.com/flavio.sdn/",
+          icon: <Instagram className="w-4 h-4" />,
+        },
+        {
+          name: "Steam",
+          link: "https://steamcommunity.com/id/fvnzera/",
+          icon: <Gamepad2 className="w-4 h-4" />,
+        },
+      ],
+    },
+    {
+      section: "others",
+      medias: [
+        {
+          name: "Setup",
+          link: "#",
+          icon: <Laptop className="w-4 h-4" />,
+        },
+        {
+          name: "Animes",
+          link: "#",
+          icon: <Shell className="w-4 h-4" />,
+        },
+        {
+          name: "Filmes",
+          link: "#",
+          icon: <Clapperboard className="w-4 h-4" />,
+        },
+      ],
+    },
+  ];
+
+  const checker: object[] = [];
+
+  function handleSearchOption(event: ChangeEvent<HTMLInputElement>) {
+    setSearch(event.target.value);
+  }
+
+  function handleCloseDialog() {
+    setSearch("");
+  }
+
+  const checkOptionMustSearched =
+    search !== ""
+      ? itemSearch.filter((item) => {
+          const findAItemSearched = item.medias.some((media) => {
+            return media.name.toLowerCase() === search.toLowerCase();
+          });
+          return findAItemSearched;
+        })
+      : itemSearch;
+
   return (
-    <Dialog.Root>
+    <Dialog.Root onOpenChange={handleCloseDialog}>
       <Dialog.Trigger
         className="flex items-center fixed bottom-5 right-5 shadow-md rounded-full w-12 h-12 py-2 px-2 bg-zinc-900 cursor-pointer hover:bg-zinc-800"
         asChild
@@ -20,17 +104,27 @@ export function Menu() {
               <input
                 className="bg-zinc-200 w-full outline-none"
                 placeholder="Digite para pesquisar"
+                onChange={handleSearchOption}
               />
             </div>
-            <Dialog.Close>
+            <Dialog.Close onClick={handleCloseDialog}>
               <X className="text-xl" />
             </Dialog.Close>
           </div>
 
           <div className="h-px bg-zinc-300 w-full" />
 
-          <div className="overflow-y-auto h-64 scrollbar scrollbar-thin scrollbar-thumb-zinc-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
-            <MenuSections />
+          <div className="overflow-y-auto h-64 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+            {checkOptionMustSearched.length > 0 ? (
+              <MenuSections data={checkOptionMustSearched} />
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full">
+                <SearchX />
+                <span className="text-lg font-semibold text-right">
+                  Não foi possível localizar o item digitado.
+                </span>
+              </div>
+            )}
           </div>
         </Dialog.Content>
       </Dialog.Portal>
