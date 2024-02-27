@@ -67,8 +67,6 @@ export function Menu() {
     },
   ];
 
-  const checker: object[] = [];
-
   function handleSearchOption(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
   }
@@ -77,14 +75,17 @@ export function Menu() {
     setSearch("");
   }
 
-  const checkOptionMustSearched =
+  const catchGroupWithMediaSearched =
     search !== ""
-      ? itemSearch.filter((item) => {
-          const findAItemSearched = item.medias.some((media) => {
-            return media.name.toLowerCase() === search.toLowerCase();
-          });
-          return findAItemSearched;
-        })
+      ? itemSearch
+          .map((item) => {
+            const filteredMedias = item.medias.filter((media) =>
+              media.name.toLowerCase().includes(search.toLowerCase()),
+            );
+
+            return { section: item.section, medias: filteredMedias };
+          })
+          .filter((item) => item.medias.length > 0)
       : itemSearch;
 
   return (
@@ -115,8 +116,8 @@ export function Menu() {
           <div className="h-px bg-zinc-300 w-full" />
 
           <div className="overflow-y-auto h-64 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-900 scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
-            {checkOptionMustSearched.length > 0 ? (
-              <MenuSections data={checkOptionMustSearched} />
+            {catchGroupWithMediaSearched.length > 0 ? (
+              <MenuSections data={catchGroupWithMediaSearched} />
             ) : (
               <div className="flex flex-col items-center justify-center h-full">
                 <SearchX />

@@ -1,7 +1,18 @@
 import { toast } from "sonner";
 
+interface MediaItems {
+  name: string;
+  link: string;
+  icon: JSX.Element;
+}
+
+interface DataItems {
+  section: string;
+  medias: MediaItems[];
+}
+
 interface MenuSectionsProps {
-  data: object[];
+  data: DataItems[];
 }
 
 export function MenuSections({ data }: MenuSectionsProps) {
@@ -14,17 +25,17 @@ export function MenuSections({ data }: MenuSectionsProps) {
     <div className="space-y-3 p-3">
       {/* Sessão de mídias */}
       <div>
-        <span className="text-sm font-semibold text-zinc-500">
-          Mídias Sociais
-        </span>
         {data.map(
           (link) =>
             link.section === "social" && (
               <div key={link.section} className="text-zinc-700 font-medium">
+                <span className="text-sm font-semibold text-zinc-500">
+                  Mídias Sociais
+                </span>
                 {link.medias.map((media) => (
                   <div
                     key={media.name}
-                    className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400"
+                    className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400 cursor-pointer"
                   >
                     <div>{media.icon}</div>
                     <a className="w-full" href={media.link} target="_blank">
@@ -39,15 +50,18 @@ export function MenuSections({ data }: MenuSectionsProps) {
 
       {/* Sessão de outros */}
       <div>
-        <span className="text-sm font-semibold text-zinc-500">Outros</span>
         {data.map(
           (link) =>
             link.section === "others" && (
               <div key={link.section} className="text-zinc-700 font-medium">
+                <span className="text-sm font-semibold text-zinc-500">
+                  Outros
+                </span>
+
                 {link.medias.map((media) => (
                   <div
                     key={media.name}
-                    className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400"
+                    className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400 cursor-pointer"
                     onClick={unavailableOption}
                   >
                     <div>{media.icon}</div>
