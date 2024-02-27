@@ -5,6 +5,8 @@ import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
 
+const { VITE_KEY_EMAIL } = import.meta.env;
+
 export function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -68,7 +70,7 @@ export function Home() {
     }
 
     try {
-      const sendEmail = await api.post("/xkndbwdz", {
+      const sendEmail = await api.post(`/${VITE_KEY_EMAIL}`, {
         name,
         email,
         message,
@@ -79,7 +81,7 @@ export function Home() {
       setEmail("");
       setMessage("");
 
-      return sendEmail
+      return sendEmail;
     } catch (error) {
       toast.error("Não foi possível enviar seu e-mail.");
     }
