@@ -62,7 +62,7 @@ export function Home() {
 
     if (!name || !email || !message) {
       toast.error(
-        "Você esqueceu um dos campos em branco, por gentileza preencha para enviar sua mensagem.",
+        "Você esqueceu um ou mais campos em branco, por gentileza preencha para enviar sua mensagem.",
       );
       return;
     }
@@ -75,6 +75,11 @@ export function Home() {
       });
 
       toast.success("E-mail enviado com sucesso!");
+      setName("");
+      setEmail("");
+      setMessage("");
+
+      return sendEmail
     } catch (error) {
       toast.error("Não foi possível enviar seu e-mail.");
     }
@@ -191,6 +196,7 @@ export function Home() {
               type="text"
               placeholder="Nome"
               onChange={handleFirstName}
+              value={name}
             />
             <label htmlFor="email" className="sr-only">
               E-mail
@@ -201,6 +207,7 @@ export function Home() {
               onChange={handleEmail}
               type="email"
               placeholder="E-mail"
+              value={email}
             />
           </div>
           <label htmlFor="mensagem" className="sr-only">
@@ -210,6 +217,7 @@ export function Home() {
             className="py-2 px-2 bg-gray-300 rounded-md resize-none h-36"
             placeholder="Escreva uma mensagem"
             onChange={handleMessage}
+            value={message}
           />
           <button
             className="py-2 px-2 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
