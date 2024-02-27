@@ -45,6 +45,14 @@ export function Home() {
       github: "https://github.com/flavioaugusto1/notes",
       deploy: "https://notes-speech.netlify.app",
     },
+    {
+      id: 5,
+      title: "ToDo List",
+      description:
+        "Cadastre suas tarefas e também marque-as quando tiver completado.",
+      github: "https://github.com/flavioaugusto1/todo-list-web",
+      deploy: "https://fladev-todolist.netlify.app/",
+    },
   ];
 
   function handleFirstName(event: ChangeEvent<HTMLInputElement>) {
