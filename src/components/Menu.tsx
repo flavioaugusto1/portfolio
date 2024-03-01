@@ -1,71 +1,12 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import {
-  Command,
-  X,
-  Search,
-  Linkedin,
-  Github,
-  Instagram,
-  Laptop,
-  Shell,
-  Clapperboard,
-  Gamepad2,
-  SearchX,
-} from "lucide-react";
+import { Command, X, Search, SearchX } from "lucide-react";
 
 import { MenuSections } from "./MenuSections";
 import { ChangeEvent, useState } from "react";
+import { itemSearch } from "../utils/listItem"
 
 export function Menu() {
   const [search, setSearch] = useState("");
-
-  const itemSearch = [
-    {
-      section: "social",
-      medias: [
-        {
-          name: "Linkedin",
-          link: "https://www.linkedin.com/in/flavio-augusto1/",
-          icon: <Linkedin className="w-4 h-4" />,
-        },
-        {
-          name: "Github",
-          link: "https://github.com/flavioaugusto1",
-          icon: <Github className="w-4 h-4" />,
-        },
-        {
-          name: "Instagram",
-          link: "https://www.instagram.com/flavio.sdn/",
-          icon: <Instagram className="w-4 h-4" />,
-        },
-        {
-          name: "Steam",
-          link: "https://steamcommunity.com/id/fvnzera/",
-          icon: <Gamepad2 className="w-4 h-4" />,
-        },
-      ],
-    },
-    {
-      section: "others",
-      medias: [
-        {
-          name: "Setup",
-          link: "#",
-          icon: <Laptop className="w-4 h-4" />,
-        },
-        {
-          name: "Animes",
-          link: "#",
-          icon: <Shell className="w-4 h-4" />,
-        },
-        {
-          name: "Filmes",
-          link: "#",
-          icon: <Clapperboard className="w-4 h-4" />,
-        },
-      ],
-    },
-  ];
 
   function handleSearchOption(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
