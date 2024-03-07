@@ -1,12 +1,13 @@
 import React from "react";
-import { Toaster } from "sonner";
 import ReactDOM from "react-dom/client";
-import { Home } from "./page/home.tsx";
+
 import "./index.css";
+import { Toaster } from "sonner";
+import { Routes } from "./routes";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Home />
+    <Routes />
     <Toaster position="top-right" />
   </React.StrictMode>,
 );

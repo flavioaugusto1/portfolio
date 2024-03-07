@@ -19,6 +19,21 @@ interface ItemProps {
 
 export const itemSearch: ItemProps[] = [
   {
+    section: "experiences",
+    medias: [
+      {
+        name: "Trabalho",
+        link: "/jobs",
+        icon: <Laptop className="w-4 h-4" />,
+      },
+      {
+        name: "Estudo",
+        link: "/studies",
+        icon: <Shell className="w-4 h-4" />,
+      },
+    ],
+  },
+  {
     section: "social",
     medias: [
       {
@@ -48,17 +63,17 @@ export const itemSearch: ItemProps[] = [
     medias: [
       {
         name: "Setup",
-        link: "#",
+        link: "/setup",
         icon: <Laptop className="w-4 h-4" />,
       },
       {
         name: "Animes",
-        link: "#",
+        link: "/animes",
         icon: <Shell className="w-4 h-4" />,
       },
       {
         name: "Filmes",
-        link: "#",
+        link: "/movies",
         icon: <Clapperboard className="w-4 h-4" />,
       },
     ],
