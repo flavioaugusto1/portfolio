@@ -89,7 +89,6 @@ export function MenuSections({ data }: MenuSectionsProps) {
                   <div
                     key={media.name}
                     className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400 cursor-pointer"
-                    onClick={unavailableOption}
                   >
                     <div>{media.icon}</div>
                     <a className="w-full" href={media.link}>

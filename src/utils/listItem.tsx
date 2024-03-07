@@ -63,7 +63,7 @@ export const itemSearch: ItemProps[] = [
     medias: [
       {
         name: "Setup",
-        link: "#",
+        link: "/setup",
         icon: <Laptop className="w-4 h-4" />,
       },
       {
