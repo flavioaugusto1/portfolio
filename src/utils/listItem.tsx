@@ -73,7 +73,7 @@ export const itemSearch: ItemProps[] = [
       },
       {
         name: "Filmes",
-        link: "#",
+        link: "/movies",
         icon: <Clapperboard className="w-4 h-4" />,
       },
     ],
