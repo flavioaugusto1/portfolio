@@ -23,6 +23,33 @@ export function MenuSections({ data }: MenuSectionsProps) {
 
   return (
     <div className="space-y-3 p-3">
+      {/* Sessão de experiences */}
+      <div>
+        {data.map(
+          (link) =>
+            link.section === "experiences" && (
+              <div key={link.section} className="text-zinc-700 font-medium">
+                <span className="text-sm font-semibold text-zinc-500">
+                  Experiências
+                </span>
+
+                {link.medias.map((media) => (
+                  <div
+                    key={media.name}
+                    className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400 cursor-pointer"
+                    onClick={unavailableOption}
+                  >
+                    <div>{media.icon}</div>
+                    <a className="w-full" href={media.link}>
+                      {media.name}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            ),
+        )}
+      </div>
+
       {/* Sessão de mídias */}
       <div>
         {data.map(
