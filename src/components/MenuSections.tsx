@@ -1,5 +1,3 @@
-import { toast } from "sonner";
-
 interface MediaItems {
   name: string;
   link: string;
@@ -16,11 +14,6 @@ interface MenuSectionsProps {
 }
 
 export function MenuSections({ data }: MenuSectionsProps) {
-  function unavailableOption() {
-    toast.warning("Essa opção ainda não está disponível!");
-    return;
-  }
-
   return (
     <div className="space-y-3 p-3">
       {/* Sessão de experiences */}
@@ -37,7 +30,6 @@ export function MenuSections({ data }: MenuSectionsProps) {
                   <div
                     key={media.name}
                     className="flex items-center gap-2 p-2 rounded-md hover:shadow-md hover:bg-gray-400 cursor-pointer"
-                    onClick={unavailableOption}
                   >
                     <div>{media.icon}</div>
                     <a className="w-full" href={media.link}>
