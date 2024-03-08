@@ -81,17 +81,37 @@ export function Home() {
         </span>
       </div>
 
-      <div className="flex flex-col gap-8">
-        <span className="text-zinc-800 text-xl font-semibold">Projetos</span>
-        {projects.map((project) => (
-          <Project
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            github={project.github}
-            deploy={project.deploy}
-          />
-        ))}
+      <div className="flex flex-col gap-14">
+        <div className="flex flex-col gap-20 lg:grid lg:grid-cols-2">
+          <div className="space-y-6">
+            <span className="text-zinc-800 text-xl font-semibold">
+              Principais Projetos
+            </span>
+            {projects.map((project) => (
+              <Project
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                github={project.github}
+                deploy={project.deploy}
+              />
+            ))}
+          </div>
+
+          <div className="space-y-6">
+            <span className="text-zinc-800 text-xl font-semibold">
+              Últimos projetos atualizados
+            </span>
+            {projects.map((project) => (
+              <Project
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                github={project.github}
+              />
+            ))}
+          </div>
+        </div>
 
         <a
           className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
