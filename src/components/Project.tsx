@@ -4,7 +4,7 @@ interface ProjectProps {
   title: string;
   description: string;
   github: string;
-  deploy: string;
+  deploy?: string;
 }
 
 export function Project({ title, description, github, deploy }: ProjectProps) {
@@ -22,17 +22,19 @@ export function Project({ title, description, github, deploy }: ProjectProps) {
             <Github className="h-5 w-5" />
           </a>
 
-          <a
-            className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all"
-            href={deploy}
-            target="_blank"
-            aria-label="Direciona para o projeto em produção"
-          >
-            <ExternalLink className="h-5 w-5" />
-          </a>
+          {deploy && (
+            <a
+              className="p-1 bg-zinc-300 rounded-md hover:bg-zinc-400 transition-all"
+              href={deploy}
+              target="_blank"
+              aria-label="Direciona para o projeto em produção"
+            >
+              <ExternalLink className="h-5 w-5" />
+            </a>
+          )}
         </div>
       </div>
-      <span className="text-zinc-600">{description}</span>
+      <span className="text-zinc-600 text-justify">{description}</span>
     </div>
   );
 }
