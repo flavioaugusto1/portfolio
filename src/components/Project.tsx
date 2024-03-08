@@ -34,7 +34,7 @@ export function Project({ title, description, github, deploy }: ProjectProps) {
           )}
         </div>
       </div>
-      <span className="text-zinc-600">{description}</span>
+      <span className="text-zinc-600 text-justify">{description}</span>
     </div>
   );
 }

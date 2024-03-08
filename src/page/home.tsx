@@ -1,15 +1,20 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Project } from "../components/Project";
 import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
 import { projects } from "../utils/projects";
+import {
+  RepositoriesProps,
+  getRepositories,
+} from "../services/getRepositories";
 
 export function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
 
   function handleFirstName(event: ChangeEvent<HTMLInputElement>) {
     setName(event.target.value);
@@ -51,6 +56,10 @@ export function Home() {
     }
   }
 
+  useEffect(() => {
+    getRepositories().then((data) => setRepositories(data));
+  }, []);
+
   return (
     <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears">
       <Menu />
@@ -71,7 +80,7 @@ export function Home() {
 
       <div className="flex flex-col space-y-2">
         <span className="font-semibold text-zinc-800 text-xl">Sobre mim</span>
-        <span>
+        <span className="text-justify">
           Olá, meu nome é Flávio Augusto, tenho 26 anos e atualmente resido em
           Santa Catarina. Sou um profissional dedicado e apaixonado por
           tecnologia, desempenhando atualmente a função de Técnico de Suporte
@@ -99,15 +108,18 @@ export function Home() {
           </div>
 
           <div className="space-y-6">
-            <span className="text-zinc-800 text-xl font-semibold">
+            <span
+              className="text-zinc-800 text-xl font-semibold"
+              title="Aqui você encontrará de forma automatizada os últimos projetos que fiz alterações."
+            >
               Últimos projetos atualizados
             </span>
-            {projects.map((project) => (
+            {repositories.map((project) => (
               <Project
-                key={project.id}
-                title={project.title}
+                key={project.node_id}
+                title={project.name}
                 description={project.description}
-                github={project.github}
+                github={project.html_url}
               />
             ))}
           </div>
@@ -131,7 +143,7 @@ export function Home() {
         <span className="text-zinc-700 text-xl font-semibold">
           Entre em contato
         </span>
-        <span className="text-zinc-600">
+        <span className="text-zinc-600 text-justify">
           Caso tenha gostado do que viu nos meus trabalhos, fique a vontade para
           enviar um e-mail, seja ele como um feedback para meus projetos ou caso
           tenha tido interesse no meu trabalho. Ficarei super feliz em receber
