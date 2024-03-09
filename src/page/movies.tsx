@@ -26,17 +26,19 @@ export function Movies() {
         <Button onClick={handleBackNavigate} name="Voltar" />
       </div>
 
-      {movies &&
-        movies.map((movie) => (
-          <MovieItem
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            description={movie.overview}
-            image={movie.poster_path}
-            rate={movie.rating}
-          />
-        ))}
+      <div className="grid grid-cols-4 gap-20">
+        {movies &&
+          movies.map((movie) => (
+            <MovieItem
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              description={movie.overview}
+              image={movie.poster_path}
+              rate={movie.rating}
+            />
+          ))}
+      </div>
     </div>
   );
 }
