@@ -4,17 +4,18 @@ import { movies } from "./movies";
 interface MovieGenresProps {
   data: {
     genres: GenreProps[];
-    production_countries: [
-      {
-        iso_3166_1: string;
-      },
-    ];
+    production_countries: OriginCountryMovieProps[];
   };
+}
+
+interface OriginCountryMovieProps {
+  iso_3166_1: string;
 }
 
 export interface GenreProps {
   id: number;
   name: string;
+  origin: string;
 }
 
 export async function getGenresByMovieName(movieId: number) {
@@ -27,9 +28,11 @@ export async function getGenresByMovieName(movieId: number) {
       return movie.iso_3166_1;
     });
 
-    const listDetailsMovie = [...data.genres, { origin: originMovie[0] }];
+    const genresWithOrigin = data.genres.map((genre) => {
+      return { ...genre, origin: originMovie[0] };
+    });
 
-    return listDetailsMovie;
+    return genresWithOrigin;
   } catch (error) {
     toast.error("Não foi possível carregar os filmes");
     return [];

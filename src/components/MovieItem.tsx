@@ -22,7 +22,7 @@ export function MovieItem({
   const [genres, setGenres] = useState<GenreProps[]>([]);
 
   useEffect(() => {
-    getGenresByMovieName(id).then((response) => console.log(response));
+    getGenresByMovieName(id).then((response) => setGenres(response));
   }, []);
 
   return (
