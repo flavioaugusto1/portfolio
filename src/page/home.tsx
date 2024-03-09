@@ -9,6 +9,7 @@ import {
   RepositoriesProps,
   getRepositories,
 } from "../services/getRepositories";
+import { Button } from "../components/Button";
 
 export function Home() {
   const [name, setName] = useState("");
@@ -217,12 +218,7 @@ export function Home() {
             onChange={handleMessage}
             value={message}
           />
-          <button
-            className="py-2 px-2 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
-            type="submit"
-          >
-            Enviar
-          </button>
+          <Button type="submit" name="Enviar" />
         </form>
       </div>
     </div>
