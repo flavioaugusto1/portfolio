@@ -43,15 +43,23 @@ export function MovieItem({
       />
 
       <div>
-        <span className="text-md text-gray-500">{origin[0]}, </span>
-        <span className="text-md text-gray-500">{yearRealeaseDate}</span>
+        <span title="País de origem do filme" className="text-md text-gray-500">
+          {origin[0]},{" "}
+        </span>
+        <span title="Ano de lançamento" className="text-md text-gray-500">
+          {yearRealeaseDate}
+        </span>
       </div>
 
       <span className="font-bold text-lg whitespace-nowrap">{title}</span>
 
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img className="w-20 h-4" src={TMDB} alt="" />
+          <img
+            className="w-20 h-4"
+            src={TMDB}
+            alt="imagem com letras em azuis escrito TMDB e ao lado um retângulo azul com bordas arrendondadas"
+          />
           <span title="Nota geral do TMDB">{vote_average.toFixed(1)}/10</span>
         </div>
 
