@@ -20,7 +20,7 @@ export function Movies() {
     <div className="max-w-screen-xl m-auto pt-8 pb-24 space-y-16 px-4 animate-appears">
       <div className="flex items-center justify-between">
         <span className="font-semibold text-zinc-800 text-2xl">
-          Filmes que ando assistindo
+          Útilmos filmes assistidos
         </span>
 
         <Button onClick={handleBackNavigate} name="Voltar" />
