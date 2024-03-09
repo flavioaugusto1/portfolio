@@ -7,6 +7,8 @@ export interface MovieProps {
   overview: string;
   poster_path: string;
   rating: number;
+  vote_average: number;
+  release_date: string;
 }
 
 export interface ListProps {
@@ -16,7 +18,7 @@ export interface ListProps {
 export async function getMovies() {
   try {
     const { data } = await movies.get<ListProps>(
-      "/account/659f2419c34f0ff95c9fa9f4f7b54a4a/rated/movies?language=pt-BR",
+      "/account/659f2419c34f0ff95c9fa9f4f7b54a4a/rated/movies?language=pt-BR&sort_by=created_at.desc",
     );
 
     const catchDetailsMovie = data.results.map((movie: MovieProps) => {
@@ -26,6 +28,8 @@ export async function getMovies() {
         overview: movie.overview,
         poster_path: movie.poster_path,
         rating: movie.rating,
+        vote_average: movie.vote_average,
+        release_date: movie.release_date,
       };
     });
 
