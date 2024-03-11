@@ -9,7 +9,7 @@ export function Movies() {
   const navigate = useNavigate();
 
   function handleBackNavigate() {
-    navigate(-1);
+    navigate("/");
   }
 
   useEffect(() => {
