@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import TMDB from "../assets/tmdb.svg";
 import {
-  getGenresByMovieName,
+  getGenresByShowName,
   GenreProps,
-} from "../services/getGenresByMovieName";
+} from "../services/getGenresByShowName";
 
 interface MovieItemProps {
   id: number;
@@ -26,7 +26,7 @@ export function MovieItem({
   const [genres, setGenres] = useState<GenreProps[]>([]);
 
   useEffect(() => {
-    getGenresByMovieName(id).then((response) => setGenres(response));
+    getGenresByShowName(id).then((response) => setGenres(response));
   }, []);
 
   const origin = genres.map((genre) => {

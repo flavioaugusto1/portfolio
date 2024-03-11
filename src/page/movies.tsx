@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { MovieItem } from "../components/MovieItem";
-import { getMovies, MovieProps } from "../services/getMovies";
+import { getShows, ShowsProps } from "../services/getShows";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
 export function Movies() {
-  const [movies, setMovies] = useState<MovieProps[]>([]);
+  const [movies, setMovies] = useState<ShowsProps[]>([]);
   const navigate = useNavigate();
 
   function handleBackNavigate() {
@@ -13,7 +13,7 @@ export function Movies() {
   }
 
   useEffect(() => {
-    getMovies().then((response) => setMovies(response));
+    getShows("movies").then((response) => setMovies(response));
   }, []);
 
   return (
