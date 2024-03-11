@@ -15,7 +15,7 @@ export function AppRoutes() {
       <Route path="/studies" element={<Studies />} />
 
       <Route path="/setup" element={<Setup />} />
-      <Route path="/animes" element={<Animes />} />
+      <Route path="/tvshows" element={<Animes />} />
       <Route path="/movies" element={<Movies />} />
     </Routes>
   )

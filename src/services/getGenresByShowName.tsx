@@ -18,10 +18,15 @@ export interface GenreProps {
   origin: string;
 }
 
-export async function getGenresByMovieName(movieId: number) {
+export interface ShowsProps {
+  movieId: number;
+  show: string;
+}
+
+export async function getGenresByShowName({ movieId, show }: ShowsProps) {
   try {
     const { data }: MovieGenresProps = await movies.get(
-      `/movie/${movieId}?language=pt-Br`,
+      `/${show}/${movieId}?language=pt-Br`,
     );
 
     const originMovie = data.production_countries.map((movie) => {

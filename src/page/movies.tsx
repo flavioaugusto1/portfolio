@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { MovieItem } from "../components/MovieItem";
-import { getMovies, MovieProps } from "../services/getMovies";
+import { ShowItem } from "../components/ShowItem";
+import { getShows, ShowsProps } from "../services/getShows";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
 export function Movies() {
-  const [movies, setMovies] = useState<MovieProps[]>([]);
+  const [movies, setMovies] = useState<ShowsProps[]>([]);
   const navigate = useNavigate();
 
   function handleBackNavigate() {
-    navigate(-1);
+    navigate("/");
   }
 
   useEffect(() => {
-    getMovies().then((response) => setMovies(response));
+    getShows("movies").then((response) => setMovies(response));
   }, []);
 
   return (
@@ -29,7 +29,7 @@ export function Movies() {
       <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {movies &&
           movies.map((movie) => (
-            <MovieItem
+            <ShowItem
               key={movie.id}
               id={movie.id}
               title={movie.title}
@@ -38,6 +38,7 @@ export function Movies() {
               rate={movie.rating}
               vote_average={movie.vote_average}
               release_date={movie.release_date}
+              show="movie"
             />
           ))}
       </div>

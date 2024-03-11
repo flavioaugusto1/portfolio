@@ -1,39 +1,47 @@
 import { useEffect, useState } from "react";
 import TMDB from "../assets/tmdb.svg";
 import {
-  getGenresByMovieName,
+  getGenresByShowName,
   GenreProps,
-} from "../services/getGenresByMovieName";
+} from "../services/getGenresByShowName";
 
-interface MovieItemProps {
+interface ShowItemProps {
   id: number;
   title: string;
   description: string;
   image: string;
   rate: number;
   vote_average: number;
-  release_date: string;
+  release_date?: string;
+  first_air_date?: string;
+  show: string;
 }
 
-export function MovieItem({
+export function ShowItem({
   id,
   title,
   image,
   rate,
   vote_average,
   release_date,
-}: MovieItemProps) {
+  first_air_date = "",
+  show,
+}: ShowItemProps) {
   const [genres, setGenres] = useState<GenreProps[]>([]);
 
   useEffect(() => {
-    getGenresByMovieName(id).then((response) => setGenres(response));
+    getGenresByShowName({ movieId: id, show }).then((response) =>
+      setGenres(response),
+    );
   }, []);
 
   const origin = genres.map((genre) => {
     return genre.origin;
   });
 
-  const yearRealeaseDate = release_date.split("-")[0];
+  const yearRealeaseDate = release_date
+    ? release_date.split("-")[0]
+    : first_air_date.split("-")[0];
 
   return (
     <div className="max-w-64 flex flex-col gap-3 rounded-md sm:m-auto max-[640px]:m-auto">
