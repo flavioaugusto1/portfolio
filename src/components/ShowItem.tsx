@@ -5,7 +5,7 @@ import {
   GenreProps,
 } from "../services/getGenresByShowName";
 
-interface MovieItemProps {
+interface ShowItemProps {
   id: number;
   title: string;
   description: string;
@@ -15,14 +15,14 @@ interface MovieItemProps {
   release_date: string;
 }
 
-export function MovieItem({
+export function ShowItem({
   id,
   title,
   image,
   rate,
   vote_average,
   release_date,
-}: MovieItemProps) {
+}: ShowItemProps) {
   const [genres, setGenres] = useState<GenreProps[]>([]);
 
   useEffect(() => {

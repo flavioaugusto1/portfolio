@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MovieItem } from "../components/MovieItem";
+import { ShowItem } from "../components/ShowItem";
 import { getShows, ShowsProps } from "../services/getShows";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +29,7 @@ export function Movies() {
       <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {movies &&
           movies.map((movie) => (
-            <MovieItem
+            <ShowItem
               key={movie.id}
               id={movie.id}
               title={movie.title}
