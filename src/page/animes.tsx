@@ -5,7 +5,7 @@ import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
 export function Animes() {
-  const [movies, setMovies] = useState<ShowsProps[]>([]);
+  const [shows, setShows] = useState<ShowsProps[]>([]);
   const navigate = useNavigate();
 
   function handleBackNavigate() {
@@ -13,8 +13,9 @@ export function Animes() {
   }
 
   useEffect(() => {
-    getShows("movies").then((response) => setMovies(response));
+    getShows("tv").then((response) => setShows(response));
   }, []);
+
 
   return (
     <div className="max-w-screen-xl m-auto pt-8 pb-24 space-y-16 px-4 animate-appears">
@@ -27,8 +28,8 @@ export function Animes() {
       </div>
 
       <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {movies &&
-          movies.map((movie) => (
+        {shows &&
+          shows.map((movie) => (
             <ShowItem
               key={movie.id}
               id={movie.id}
@@ -37,7 +38,8 @@ export function Animes() {
               image={movie.poster_path}
               rate={movie.rating}
               vote_average={movie.vote_average}
-              release_date={movie.release_date}
+              first_air_date={movie.first_air_date}
+              show="tv"
             />
           ))}
       </div>

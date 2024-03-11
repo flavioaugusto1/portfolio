@@ -67,8 +67,8 @@ export const itemSearch: ItemProps[] = [
         icon: <Laptop className="w-4 h-4" />,
       },
       {
-        name: "Animes",
-        link: "/animes",
+        name: "Animes/Series",
+        link: "/tvshows",
         icon: <Shell className="w-4 h-4" />,
       },
       {

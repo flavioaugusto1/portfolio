@@ -9,6 +9,7 @@ export interface ShowsProps {
   rating: number;
   vote_average: number;
   release_date: string;
+  first_air_date: string;
 }
 
 export interface ListProps {
@@ -30,6 +31,7 @@ export async function getShows(show: string) {
         rating: movie.rating,
         vote_average: movie.vote_average,
         release_date: movie.release_date,
+        first_air_date: movie.first_air_date
       };
     });
 

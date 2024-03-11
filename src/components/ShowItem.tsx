@@ -12,7 +12,9 @@ interface ShowItemProps {
   image: string;
   rate: number;
   vote_average: number;
-  release_date: string;
+  release_date?: string;
+  first_air_date?: string;
+  show: string;
 }
 
 export function ShowItem({
@@ -22,18 +24,24 @@ export function ShowItem({
   rate,
   vote_average,
   release_date,
+  first_air_date = "",
+  show,
 }: ShowItemProps) {
   const [genres, setGenres] = useState<GenreProps[]>([]);
 
   useEffect(() => {
-    getGenresByShowName(id).then((response) => setGenres(response));
+    getGenresByShowName({ movieId: id, show }).then((response) =>
+      setGenres(response),
+    );
   }, []);
 
   const origin = genres.map((genre) => {
     return genre.origin;
   });
 
-  const yearRealeaseDate = release_date.split("-")[0];
+  const yearRealeaseDate = release_date
+    ? release_date.split("-")[0]
+    : first_air_date.split("-")[0];
 
   return (
     <div className="max-w-64 flex flex-col gap-3 rounded-md sm:m-auto max-[640px]:m-auto">
