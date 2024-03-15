@@ -10,6 +10,7 @@ import {
   getRepositories,
 } from "../services/getRepositories";
 import { Button } from "../components/Button";
+import { Introduction } from "./sections/Introduction";
 
 export function Home() {
   const [name, setName] = useState("");
@@ -64,51 +65,8 @@ export function Home() {
   return (
     <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears font-inter">
       <Menu />
+      <Introduction />
 
-      <section className="">
-        <div>
-          <img
-            src="https://github.com/flavioaugusto1.png"
-            className="h-20 w-20 rounded-full"
-            alt="Foto mostrando mais o perfil do rosto de um homem que está utilzando camisa preta, uma barba media e fazendo uma cara um pouco mais seria "
-          />
-        </div>
-
-        <h1 className="mt-8 text-2xl font-semibold text-zinc-800">
-          Flávio Augusto Silva
-        </h1>
-        <h2 className="text-lg text-zinc-400">Back-End Developer</h2>
-
-        <div className="my-10">
-          <p className="my-4 leading-loose">
-            Atualmente resido em Santa Catarina e trabalho na{" "}
-            <a
-              href="https://www.fortics.com.br/"
-              target="_blank"
-              className="font-medium text-zinc-800 underline decoration-blue-800 decoration-2 underline-offset-1 hover:text-blue-800 hover:decoration-blue-800/30 transition-colors"
-            >
-              Fortics Tecnologia
-            </a>{" "}
-            como Técnico de Suporte Pleno e estou fazendo formações da{" "}
-            <a
-              href="https://www.rocketseat.com.br/"
-              target="_blank"
-              className="font-medium text-zinc-800 underline decoration-purple-600 decoration-2 underline-offset-1 hover:text-purple-600 hover:decoration-purple-600/30 transition-colors"
-            >
-              RocketSeat
-            </a>
-            . Antes disso sou graduado em Análise e desenvolvimento de Sistemas
-            na{" "}
-            <a
-              href=""
-              target="_blank"
-              className="font-medium text-zinc-800 underline decoration-cyan-500 decoration-2 underline-offset-1 hover:text-cyan-500 hover:decoration-cyan-500/30 transition-colors"
-            >
-              Estácio.
-            </a>
-          </p>
-        </div>
-      </section>
 
       <div className="flex flex-col gap-14">
         <div className="flex flex-col gap-20 lg:grid lg:grid-cols-2">
