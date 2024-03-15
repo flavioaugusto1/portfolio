@@ -18,7 +18,7 @@ export function Introduction() {
 
       <div className="my-10">
         <p className="my-4 leading-loose">
-          Atualmente resido em Santa Catarina e trabalho na{" "}
+          Atualmente resido em Santa Catarina, trabalho na{" "}
           <a
             href="https://www.fortics.com.br/"
             target="_blank"
