@@ -10,6 +10,7 @@ import {
   getRepositories,
 } from "../services/getRepositories";
 import { Button } from "../components/Button";
+import { Introduction } from "./sections/Introduction";
 
 export function Home() {
   const [name, setName] = useState("");
@@ -62,34 +63,9 @@ export function Home() {
   }, []);
 
   return (
-    <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears">
+    <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears font-inter">
       <Menu />
-
-      <div className="flex gap-1 items-center">
-        <img
-          src="https://github.com/flavioaugusto1.png"
-          className="h-14 w-14 rounded-full"
-          alt="Foto mostrando mais o perfil do rosto de um homem que está utilzando camisa preta, uma barba media e fazendo uma cara um pouco mais seria "
-        />
-        <div className="flex flex-col">
-          <span className="text-lg font-semibold text-zinc-800">
-            Flávio Augusto
-          </span>
-          <span className="text-base font-normal">Front-End Developer</span>
-        </div>
-      </div>
-
-      <div className="flex flex-col space-y-2">
-        <span className="font-semibold text-zinc-800 text-xl">Sobre mim</span>
-        <span className="text-justify">
-          Olá, meu nome é Flávio Augusto, tenho 26 anos e atualmente resido em
-          Santa Catarina. Sou um profissional dedicado e apaixonado por
-          tecnologia, desempenhando atualmente a função de Técnico de Suporte
-          Pleno. Tenho como objetivo direcionar minha carreira para a área de
-          Desenvolvimento Front-End, atraído pela sua dinâmica, inovação e
-          desafios constantes.
-        </span>
-      </div>
+      <Introduction />
 
       <div className="flex flex-col gap-14">
         <div className="flex flex-col gap-20 lg:grid lg:grid-cols-2">
@@ -150,36 +126,6 @@ export function Home() {
           tenha tido interesse no meu trabalho. Ficarei super feliz em receber
           sua mensagem.
         </span>
-
-        <ul className="flex items-center gap-4 text-gray-500 list-none underline font-medium">
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://github.com/flavioaugusto1"
-            >
-              Github
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://www.linkedin.com/in/flavio-augusto1/"
-            >
-              Linkedin
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://www.instagram.com/flavio.sdn/"
-            >
-              Instagram
-            </a>
-          </li>
-        </ul>
 
         <form
           onSubmit={handleSubmitEmailContact}

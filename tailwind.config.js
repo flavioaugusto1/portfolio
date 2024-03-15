@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: ["Nunito", "sans-serif"],
+      fontFamily: { inter: ["Inter", "sans-serif"] },
       keyframes: {
         appears: {
           from: { opacity: "0" },
@@ -15,5 +15,4 @@ export default {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
