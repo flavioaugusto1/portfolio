@@ -67,7 +67,6 @@ export function Home() {
       <Menu />
       <Introduction />
 
-
       <div className="flex flex-col gap-14">
         <div className="flex flex-col gap-20 lg:grid lg:grid-cols-2">
           <div className="space-y-6">
@@ -127,36 +126,6 @@ export function Home() {
           tenha tido interesse no meu trabalho. Ficarei super feliz em receber
           sua mensagem.
         </span>
-
-        <ul className="flex items-center gap-4 text-gray-500 list-none underline font-medium">
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://github.com/flavioaugusto1"
-            >
-              Github
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://www.linkedin.com/in/flavio-augusto1/"
-            >
-              Linkedin
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-gray-700 transition-all"
-              target="_blank"
-              href="https://www.instagram.com/flavio.sdn/"
-            >
-              Instagram
-            </a>
-          </li>
-        </ul>
 
         <form
           onSubmit={handleSubmitEmailContact}
