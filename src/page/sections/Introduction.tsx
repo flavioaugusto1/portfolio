@@ -38,7 +38,7 @@ export function Introduction() {
           <a
             href=""
             target="_blank"
-            className="font-medium text-zinc-800 underline decoration-cyan-500 decoration-2 underline-offset-1 hover:text-cyan-500 hover:decoration-cyan-500/30 transition-colors"
+            className="transform-framer font-medium text-zinc-800 underline decoration-cyan-500 decoration-2 underline-offset-1 hover:text-cyan-500 hover:decoration-cyan-500/30 transition-colors"
           >
             Estácio.
           </a>

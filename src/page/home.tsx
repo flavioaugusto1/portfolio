@@ -1,16 +1,15 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Project } from "../components/Project";
 import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
-import { projects } from "../utils/projects";
 import {
   RepositoriesProps,
   getRepositories,
 } from "../services/getRepositories";
 import { Button } from "../components/Button";
 import { Introduction } from "./sections/Introduction";
+import { MainProjects } from "./sections/MainProjects";
 
 export function Home() {
   const [name, setName] = useState("");
@@ -66,25 +65,9 @@ export function Home() {
     <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears font-inter">
       <Menu />
       <Introduction />
+      <MainProjects />
 
-      <div className="flex flex-col gap-14">
-        <div className="flex flex-col gap-20 lg:grid lg:grid-cols-2">
-          <div className="space-y-6">
-            <span className="text-zinc-800 text-xl font-semibold">
-              Principais Projetos
-            </span>
-            {projects.map((project) => (
-              <Project
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                github={project.github}
-                deploy={project.deploy}
-              />
-            ))}
-          </div>
-
-          <div className="space-y-6">
+      {/* <div className="space-y-6">
             <span
               className="text-zinc-800 text-xl font-semibold"
               title="Aqui você encontrará de forma automatizada os últimos projetos que fiz alterações."
@@ -99,17 +82,15 @@ export function Home() {
                 github={project.html_url}
               />
             ))}
-          </div>
-        </div>
+          </div> */}
 
-        <a
-          className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
-          href="https://github.com/flavioaugusto1?tab=repositories"
-          target="_blank"
-        >
-          Mais projetos
-        </a>
-      </div>
+      <a
+        className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
+        href="https://github.com/flavioaugusto1?tab=repositories"
+        target="_blank"
+      >
+        Mais projetos
+      </a>
 
       <div className="space-y-6">
         <span className="text-zinc-800 text-xl font-semibold">Tecnologias</span>
