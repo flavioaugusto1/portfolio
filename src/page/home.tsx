@@ -62,7 +62,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="max-w-screen-md m-auto pt-8 pb-24 space-y-16 px-4 animate-appears font-inter">
+    <div className="flex flex-col gap-12 max-w-screen-md m-auto pt-8 pb-24 px-4 animate-appears font-inter">
       <Menu />
       <Introduction />
       <MainProjects />
