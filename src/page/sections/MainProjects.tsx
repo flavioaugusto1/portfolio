@@ -1,4 +1,5 @@
-import Logo from "../../assets/logoFortics.jpeg";
+import FoodExplorer from "../../assets/food-explorer.png";
+import RocketNotes from "../../assets/rocket-notes.png"
 
 export function MainProjects() {
   return (
@@ -7,58 +8,77 @@ export function MainProjects() {
         <span className="text-zinc-800 text-xl font-semibold">
           Principais Projetos
         </span>
-        <div className="bg-blue-950 p-2 rounded-md">
+
+        <div className="bg-sky-500 p-2 rounded-md">
           <div className="flex flex-col-reverse items-center gap-8 p-5 rounded-md lg:flex-row-reverse">
-            <div className="w-full relative justify-center rounded-md overflow-hidden">
-              <div className="w-full absolute bg-white backdrop-blur-lg backdrop-saturate-200 h-10 flex items-center gap-4">
-                <div className="flex gap-1 mx-2">
-                  <div className="rounded-full h-3 w-3 bg-slate-600"></div>
-                  <div className="rounded-full h-3 w-3 bg-slate-600"></div>
-                  <div className="rounded-full h-3 w-3 bg-slate-600"></div>
-                </div>
-                <span className="bg-slate-500 p-1 rounded-md">
+            <div className="rounded-md overflow-hidden">
+              <img src={FoodExplorer} className="w-full h-full" alt="" />
+            </div>
+            <div>
+              <h1 className="mb-3 text-lg font-semibold text-white">
+                Food Explorer
+              </h1>
+              <span className="text-blue-100 flex-1">
+                O{" "}
+                <a
+                  href="https://food-expl0rer.netlify.app/"
+                  target="_blank"
+                  className="focusable rounded-sm font-medium underline decoration-sky-100/30 decoration-2 underline-offset-2 transition duration-100 hover:decoration-sky-100/50 focus:ring-sky-100/30 dark:decoration-sky-900/20 dark:hover:decoration-sky-900/40 dark:focus:ring-sky-900/20"
+                >
                   food-explorer.com
-                </span>
-              </div>
-              <img src={Logo} className="w-96 h-80" alt="" />
-            </div>
-            <div>
-              <span className="text-zinc-600 text-justify">
-                O <a href="">Food-explorer</a> foi desenvolvida para atender a
-                pessoas que precisam salvar suas anotações de forma fácil e
-                intuitiva.
+                </a>{" "}
+                foi desenvolvida para atender a pessoas que precisam salvar suas
+                anotações de forma fácil e intuitiva.
               </span>
             </div>
           </div>
         </div>
 
-        <div className="bg-blue-950 p-6 rounded-md">
-          <div className="flex flex-col-reverse items-center justify-between gap-8 p-12 rounded-md lg:flex-row-reverse">
-            <div className="w-full relative justify-center">
-              <div className="max-w-60 absolute bg-slate-400 w-full h-4"></div>
-              <img src={Logo} className="w-60 h-60" alt="" />
+        <div className="bg-orange-500 p-2 rounded-md">
+          <div className="flex flex-col-reverse items-center gap-8 p-5 rounded-md lg:flex-row-reverse">
+            <div className="rounded-md overflow-hidden">
+              <img src={RocketNotes} className="w-full h-full" alt="" />
             </div>
             <div>
-              <span className="text-zinc-600 text-justify">
-                O <a href="">Rocket Notes</a> foi desenvolvida para atender a
-                pessoas que precisam salvar suas anotações de forma fácil e
-                intuitiva.
+              <h1 className="mb-3 text-lg font-semibold text-white">
+                Rocket Notes
+              </h1>
+              <span className="text-blue-100 flex-1">
+                O{" "}
+                <a
+                  href="https://roocketnotes.netlify.app/"
+                  target="_blank"
+                  className="focusable rounded-sm font-medium underline decoration-orange-100/30 decoration-2 underline-offset-2 transition duration-100 hover:decoration-orange-100/50 focus:ring-orange-100/30"
+                >
+                  rocket-notes.com
+                </a>{" "}
+                foi desenvolvida para atender a pessoas que precisam salvar suas
+                anotações de forma fácil e intuitiva.
               </span>
             </div>
           </div>
         </div>
 
-        <div className="bg-blue-950 p-6 rounded-md">
-          <div className="flex flex-col-reverse items-center justify-between gap-8 p-12 rounded-md lg:flex-row-reverse">
-            <div className="w-full relative justify-center">
-              <div className="max-w-60 absolute bg-slate-400 w-full h-4"></div>
-              <img src={Logo} className="w-60 h-60" alt="" />
+        <div className="bg-sky-500 p-2 rounded-md">
+          <div className="flex flex-col-reverse items-center gap-8 p-5 rounded-md lg:flex-row-reverse">
+            <div className="rounded-md overflow-hidden">
+              <img src={FoodExplorer} className="w-full h-full" alt="" />
             </div>
             <div>
-              <span className="text-zinc-600 text-justify">
-                O <a href="">Rocket Notes</a> foi desenvolvida para atender a
-                pessoas que precisam salvar suas anotações de forma fácil e
-                intuitiva.
+              <h1 className="mb-3 text-lg font-semibold text-white">
+                Food Explorer
+              </h1>
+              <span className="text-blue-100 flex-1">
+                O{" "}
+                <a
+                  href="https://food-expl0rer.netlify.app/"
+                  target="_blank"
+                  className="focusable rounded-sm font-medium underline decoration-sky-100/30 decoration-2 underline-offset-2 transition duration-100 hover:decoration-sky-100/50 focus:ring-sky-100/30 dark:decoration-sky-900/20 dark:hover:decoration-sky-900/40 dark:focus:ring-sky-900/20"
+                >
+                  food-explorer.com
+                </a>{" "}
+                foi desenvolvida para atender a pessoas que precisam salvar suas
+                anotações de forma fácil e intuitiva.
               </span>
             </div>
           </div>
