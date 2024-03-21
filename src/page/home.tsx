@@ -1,12 +1,12 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
 import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
-import {
-  // RepositoriesProps,
-  getRepositories,
-} from "../services/getRepositories";
+// import {
+//   // RepositoriesProps,
+//   getRepositories,
+// } from "../services/getRepositories";
 import { Button } from "../components/Button";
 import { Introduction } from "./sections/Introduction";
 import { MainProjects } from "./sections/MainProjects";
@@ -57,9 +57,9 @@ export function Home() {
     }
   }
 
-  useEffect(() => {
-    getRepositories().then((data) => setRepositories(data));
-  }, []);
+  // useEffect(() => {
+  //   getRepositories().then((data) => setRepositories(data));
+  // }, []);
 
   return (
     <div className="flex flex-col gap-12 max-w-screen-md m-auto pt-8 pb-24 px-4 animate-appears font-inter">
