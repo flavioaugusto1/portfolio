@@ -14,6 +14,11 @@ export default {
       animation: {
         appears: "appears 1s",
       },
+      colors:{
+        pinkmovies: "#FF859B",
+        orangenotes: "#FF9000",
+        blueexplorer: "#065E7C"
+      }
     },
   },
 };
