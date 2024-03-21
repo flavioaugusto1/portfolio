@@ -1,6 +1,6 @@
 import FoodExplorer from "../../assets/food-explorer.png";
-import RocketNotes from "../../assets/rocket-notes.png"
-import RocketMovies from "../../assets/rocket-movies.png"
+import RocketNotes from "../../assets/rocket-notes.png";
+import RocketMovies from "../../assets/rocket-movies.png";
 
 export function MainProjects() {
   return (
@@ -78,8 +78,8 @@ export function MainProjects() {
                 >
                   rocket-movies.com
                 </a>{" "}
-                foi desenvolvida para atender a pessoas que precisam salvar suas
-                anotações de forma fácil e intuitiva.
+                foi desenvolvida para que você possa dar avaliações para seus
+                filmes preferidos e ter todos eles salvos em apenas um lugar
               </span>
             </div>
           </div>
