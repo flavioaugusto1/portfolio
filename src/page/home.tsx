@@ -4,7 +4,7 @@ import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
 import {
-  RepositoriesProps,
+  // RepositoriesProps,
   getRepositories,
 } from "../services/getRepositories";
 import { Button } from "../components/Button";
@@ -15,7 +15,7 @@ export function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
+  // const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
 
   function handleFirstName(event: ChangeEvent<HTMLInputElement>) {
     setName(event.target.value);
