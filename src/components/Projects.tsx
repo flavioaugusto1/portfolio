@@ -1,5 +1,5 @@
 import { formatDistanceToNow } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
+import { ptBR } from "date-fns/locale/pt-BR";
 import { Github, Star } from "lucide-react";
 
 interface ProjectsProps {
@@ -22,7 +22,10 @@ export function Projects({
       <div className="flex justify-between">
         <div className="flex items-center gap-1 mb-8 text-sm">
           <span className="text-zinc-500 font-medium">
-            {formatDistanceToNow(pushed_at, { addSuffix: true, locale: ptBR })}
+            {formatDistanceToNow(pushed_at, {
+              addSuffix: true,
+              locale: ptBR,
+            })}
           </span>
           <Star size={20} className="text-zinc-500" />
           <span className="font-semibold text-zinc-500 cursor-default">
