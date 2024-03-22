@@ -3,8 +3,11 @@ interface ProjectsProps {
   description: string;
   github: string;
   stargazers_count: number;
+  pushed_at: string;
 }
 
+import { formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 import { Github, Star } from "lucide-react";
 
 export function Projects({
@@ -12,13 +15,19 @@ export function Projects({
   description,
   github,
   stargazers_count,
+  pushed_at,
 }: ProjectsProps) {
   return (
     <div className="rounded-lg border border-zinc-300 p-6">
       <div className="flex justify-between">
-        <div className="flex items-center gap-1 mb-8">
+        <div className="flex items-center gap-1 mb-8 text-sm">
+          <span className="text-zinc-500 font-medium">
+            {formatDistanceToNow(pushed_at, { addSuffix: true, locale: ptBR })}
+          </span>
           <Star size={20} className="text-zinc-500" />
-          <span className="font-semibold text-zinc-500 cursor-default">{stargazers_count}</span>
+          <span className="font-semibold text-zinc-500 cursor-default">
+            {stargazers_count}
+          </span>
         </div>
         <a href={github} target="_blank">
           <Github

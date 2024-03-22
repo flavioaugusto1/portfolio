@@ -39,6 +39,7 @@ export function UpdatedProjects() {
             description={project.description}
             github={project.html_url}
             stargazers_count={project.stargazers_count}
+            pushed_at={project.pushed_at}
           />
         ))}
       </div>

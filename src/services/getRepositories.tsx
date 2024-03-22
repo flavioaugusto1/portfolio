@@ -7,6 +7,7 @@ export interface RepositoriesProps {
   description: string;
   html_url: string;
   stargazers_count: number;
+  pushed_at: string;
 }
 
 export async function getRepositories(): Promise<RepositoriesProps[]> {
@@ -23,6 +24,7 @@ export async function getRepositories(): Promise<RepositoriesProps[]> {
         description: repo.description,
         html_url: repo.html_url,
         stargazers_count: repo.stargazers_count,
+        pushed_at: repo.pushed_at
       };
     });
 
