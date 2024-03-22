@@ -1,3 +1,7 @@
+import { formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
+import { Github, Star } from "lucide-react";
+
 interface ProjectsProps {
   title: string;
   description: string;
@@ -5,10 +9,6 @@ interface ProjectsProps {
   stargazers_count: number;
   pushed_at: string;
 }
-
-import { formatDistanceToNow } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
-import { Github, Star } from "lucide-react";
 
 export function Projects({
   title,
