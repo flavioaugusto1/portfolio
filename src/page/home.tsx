@@ -69,7 +69,7 @@ export function Home() {
         <span className="text-zinc-700 text-xl font-semibold">
           Entre em contato
         </span>
-        <span className="text-zinc-600 text-justify">
+        <span className="text-zinc-500 text-justify">
           Caso tenha gostado do que viu nos meus trabalhos, fique a vontade para
           enviar um e-mail, seja ele como um feedback para meus projetos ou caso
           tenha tido interesse no meu trabalho. Ficarei super feliz em receber

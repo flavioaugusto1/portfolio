@@ -1,5 +1,4 @@
 import { toast } from "sonner";
-import { formatFirstLetterToUpperCase } from "../utils/formatNameRepositorie";
 import { repositories } from "./repositores";
 
 export interface RepositoriesProps {

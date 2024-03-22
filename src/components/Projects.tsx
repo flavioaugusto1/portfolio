@@ -29,7 +29,7 @@ export function Projects({
       </div>
       <h2 className="font-semibold text-lg mb-2">{title}</h2>
 
-      <p>{description}</p>
+      <p className="text-zinc-500">{description}</p>
     </div>
   );
 }

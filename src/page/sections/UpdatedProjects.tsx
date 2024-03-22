@@ -20,7 +20,7 @@ export function UpdatedProjects() {
       >
         Últimos projetos atualizados
       </h2>
-      <p>
+      <p className="text-zinc-500 leading-loose">
         Aqui você encontrará meu últimos projetos atualizados no{" "}
         <a
           href="https://github.com/flavioaugusto1?tab=repositories"
@@ -29,7 +29,6 @@ export function UpdatedProjects() {
         >
           Github
         </a>
-        .
       </p>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
