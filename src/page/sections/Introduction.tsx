@@ -17,7 +17,7 @@ export function Introduction() {
       <h2 className="text-lg text-zinc-400">Back-End Developer</h2>
 
       <div className="my-10">
-        <p className="my-4 leading-loose">
+        <p className="my-4 leading-loose text-zinc-500">
           Atualmente resido em Santa Catarina, trabalho na{" "}
           <a
             href="https://www.fortics.com.br/"

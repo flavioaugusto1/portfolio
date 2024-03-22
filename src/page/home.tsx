@@ -3,19 +3,15 @@ import { toast } from "sonner";
 import { Stack } from "../components/Stack";
 import { api } from "../services/api";
 import { Menu } from "../components/Menu";
-// import {
-//   // RepositoriesProps,
-//   getRepositories,
-// } from "../services/getRepositories";
 import { Button } from "../components/Button";
 import { Introduction } from "./sections/Introduction";
 import { MainProjects } from "./sections/MainProjects";
+import { UpdatedProjects } from "./sections/UpdatedProjects";
 
 export function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
 
   function handleFirstName(event: ChangeEvent<HTMLInputElement>) {
     setName(event.target.value);
@@ -57,40 +53,12 @@ export function Home() {
     }
   }
 
-  // useEffect(() => {
-  //   getRepositories().then((data) => setRepositories(data));
-  // }, []);
-
   return (
-    <div className="flex flex-col gap-12 max-w-screen-md m-auto pt-8 pb-24 px-4 animate-appears font-inter">
+    <div className="flex flex-col gap-16 max-w-screen-md m-auto pt-8 pb-24 px-4 animate-appears font-inter">
       <Menu />
       <Introduction />
       <MainProjects />
-
-      {/* <div className="space-y-6">
-            <span
-              className="text-zinc-800 text-xl font-semibold"
-              title="Aqui você encontrará de forma automatizada os últimos projetos que fiz alterações."
-            >
-              Últimos projetos atualizados
-            </span>
-            {repositories.map((project) => (
-              <Project
-                key={project.node_id}
-                title={project.name}
-                description={project.description}
-                github={project.html_url}
-              />
-            ))}
-          </div> */}
-
-      <a
-        className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
-        href="https://github.com/flavioaugusto1?tab=repositories"
-        target="_blank"
-      >
-        Mais projetos
-      </a>
+      <UpdatedProjects />
 
       <div className="space-y-6">
         <span className="text-zinc-800 text-xl font-semibold">Tecnologias</span>
@@ -101,7 +69,7 @@ export function Home() {
         <span className="text-zinc-700 text-xl font-semibold">
           Entre em contato
         </span>
-        <span className="text-zinc-600 text-justify">
+        <span className="text-zinc-500 text-justify">
           Caso tenha gostado do que viu nos meus trabalhos, fique a vontade para
           enviar um e-mail, seja ele como um feedback para meus projetos ou caso
           tenha tido interesse no meu trabalho. Ficarei super feliz em receber
