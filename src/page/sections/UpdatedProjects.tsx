@@ -32,6 +32,7 @@ export function UpdatedProjects() {
             title={project.name}
             description={project.description}
             github={project.html_url}
+            stargazers_count={project.stargazers_count}
           />
         ))}
       </div>

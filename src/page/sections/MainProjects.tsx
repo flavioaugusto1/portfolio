@@ -16,7 +16,7 @@ export function MainProjects() {
               <img src={FoodExplorer} className="w-full h-full" alt="" />
             </div>
             <div>
-              <h1 className="mb-3 text-lg font-semibold text-white">
+              <h1 className="mb-3 text-2xl font-semibold text-white">
                 Food Explorer
               </h1>
               <span className="text-blue-100 flex-1">
@@ -41,7 +41,7 @@ export function MainProjects() {
               <img src={RocketNotes} className="w-full h-full" alt="" />
             </div>
             <div>
-              <h1 className="mb-3 text-lg font-semibold text-white">
+              <h1 className="mb-3 text-2xl font-semibold text-white">
                 Rocket Notes
               </h1>
               <span className="text-blue-100 flex-1">
@@ -66,7 +66,7 @@ export function MainProjects() {
               <img src={RocketMovies} className="w-full h-full" alt="" />
             </div>
             <div>
-              <h1 className="mb-3 text-lg font-semibold text-white">
+              <h1 className="mb-3 text-2xl font-semibold text-white">
                 Rocket Movies
               </h1>
               <span className="text-blue-100 flex-1">
