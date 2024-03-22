@@ -60,14 +60,6 @@ export function Home() {
       <MainProjects />
       <UpdatedProjects />
 
-      <a
-        className="text-center p-2 m-auto w-32 bg-zinc-900 rounded-md text-gray-300 font-semibold hover:bg-zinc-700 transition-all"
-        href="https://github.com/flavioaugusto1?tab=repositories"
-        target="_blank"
-      >
-        Mais projetos
-      </a>
-
       <div className="space-y-6">
         <span className="text-zinc-800 text-xl font-semibold">Tecnologias</span>
         <Stack />
