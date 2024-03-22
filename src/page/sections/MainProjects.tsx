@@ -24,7 +24,7 @@ export function MainProjects() {
                 <a
                   href="https://food-expl0rer.netlify.app/"
                   target="_blank"
-                  className="focusable rounded-sm font-medium underline decoration-sky-100/30 decoration-2 underline-offset-2 transition duration-100 hover:decoration-sky-100/50 focus:ring-sky-100/30"
+                  className="rounded-sm font-medium underline decoration-sky-100/30 decoration-2 underline-offset-2 transition duration-100 hover:decoration-sky-100/50 focus:ring-sky-100/30"
                 >
                   food-explorer.com
                 </a>{" "}

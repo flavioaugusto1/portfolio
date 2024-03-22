@@ -22,7 +22,14 @@ export function UpdatedProjects() {
       </h2>
       <p>
         Aqui você encontrará meu últimos projetos atualizados no{" "}
-        <a href="#">Github</a>
+        <a
+          href="https://github.com/flavioaugusto1?tab=repositories"
+          target="_blank"
+          className="underline decoration-zinc-600 transition-colors decoration-2 underline-offset-2 hover:decoration-zinc-400"
+        >
+          Github
+        </a>
+        .
       </p>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
