@@ -4,7 +4,7 @@ import RocketMovies from "../../assets/rocket-movies.png";
 
 export function MainProjects() {
   return (
-    <div className="flex flex-col gap-20">
+    <section className="flex flex-col gap-20">
       <div className="space-y-10">
         <span className="text-zinc-800 text-xl font-semibold">
           Principais Projetos
@@ -85,6 +85,6 @@ export function MainProjects() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
