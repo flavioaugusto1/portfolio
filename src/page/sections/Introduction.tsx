@@ -14,7 +14,7 @@ export function Introduction() {
       <h1 className="mt-8 text-2xl font-semibold text-zinc-800">
         Flávio Augusto Silva
       </h1>
-      <h2 className="text-lg text-zinc-400">Back-End Developer</h2>
+      <h2 className="text-lg text-zinc-400">Mobile Developer</h2>
 
       <div className="my-10">
         <p className="my-4 leading-loose text-zinc-500">
@@ -33,6 +33,14 @@ export function Introduction() {
             className="font-medium text-zinc-800 underline decoration-purple-600 decoration-2 underline-offset-1 hover:text-purple-600 hover:decoration-purple-600/30 transition-colors"
           >
             RocketSeat
+          </a>
+          e também da{""}
+          <a
+            href="https://www.fortics.com.br/"
+            target="_blank"
+            className="font-medium text-zinc-800 underline decoration-blue-800 decoration-2 underline-offset-1 hover:text-blue-800 hover:decoration-blue-800/30 transition-colors"
+          >
+            Alura
           </a>
           . Antes disso sou graduado em Análise e desenvolvimento de Sistemas na{" "}
           <a
