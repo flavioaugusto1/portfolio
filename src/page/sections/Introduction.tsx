@@ -36,7 +36,7 @@ export function Introduction() {
           </a>{" "}
           e também da{" "}
           <a
-            href="https://www.fortics.com.br/"
+            href="https://cursos.alura.com.br/"
             target="_blank"
             className="font-medium text-zinc-800 underline decoration-blue-800 decoration-2 underline-offset-1 hover:text-blue-800 hover:decoration-blue-800/30 transition-colors"
           >
