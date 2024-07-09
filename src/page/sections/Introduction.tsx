@@ -33,8 +33,8 @@ export function Introduction() {
             className="font-medium text-zinc-800 underline decoration-purple-600 decoration-2 underline-offset-1 hover:text-purple-600 hover:decoration-purple-600/30 transition-colors"
           >
             RocketSeat
-          </a>
-          e também da{""}
+          </a>{" "}
+          e também da{" "}
           <a
             href="https://www.fortics.com.br/"
             target="_blank"
